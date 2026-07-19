@@ -42,15 +42,15 @@
         <button class="upload-button" type="button" disabled><span aria-hidden="true">＋</span><b>上传战绩截图</b><small>即将支持</small></button>
         <form id="kd-form">
           <div class="input-grid">
-            <label>总场次<input id="matches" type="number" min="0" value="486" inputmode="numeric"></label>
-            <label>总击杀数<input id="kills" type="number" min="0" value="1248" inputmode="numeric"></label>
-            <label>总撤离率<input id="survival" type="number" min="0" max="100" step="0.1" value="42.6" inputmode="decimal"><span>%</span></label>
+            <label>总场次<input id="matches" type="number" min="0" value="284" inputmode="numeric"></label>
+            <label>总击杀数<input id="kills" type="number" min="0" value="855" inputmode="numeric"></label>
+            <label>总撤离率<input id="survival" type="number" min="0" max="100" step="0.1" value="40.8" inputmode="decimal"><span>%</span></label>
           </div>
           <div class="queue-title"><span>各匹配队列 KD</span><small>KILLS / DEATH</small></div>
           <div class="queue-grid">
-            <label><b>Easy</b><span>普通</span><input id="easy" type="number" min="0.1" step="0.1" value="2.2" inputmode="decimal"></label>
-            <label><b>Normal</b><span>机密</span><input id="normal" type="number" min="0.1" step="0.1" value="3.7" inputmode="decimal"></label>
-            <label class="hard"><b>Hard</b><span>绝密</span><input id="hard" type="number" min="0.1" step="0.1" value="5.5" inputmode="decimal"></label>
+            <label><b>Easy</b><span>普通</span><input id="easy" type="number" min="0.1" step="0.1" value="0.8" inputmode="decimal"></label>
+            <label><b>Normal</b><span>机密</span><input id="normal" type="number" min="0.1" step="0.1" value="2.1" inputmode="decimal"></label>
+            <label class="hard"><b>Hard</b><span>绝密</span><input id="hard" type="number" min="0.1" step="0.1" value="5.6" inputmode="decimal"></label>
           </div>
           <p class="kd-rule">按游戏显示规则录入：KD 四舍五入到小数点后一位；真实值在 0–0.1 时均显示为 0.1。</p>
         </form>
@@ -58,13 +58,13 @@
         <div id="result" class="result" aria-live="polite">
           <div class="bound-list">
             <p>可能的绝密场次区间</p>
-            <div class="bound-row"><span>至少</span><strong id="minimum">113</strong><small id="minimum-unit">场</small></div>
-            <div class="bound-row"><span>至多</span><strong id="maximum">403</strong><small id="maximum-unit">场</small></div>
+            <div class="bound-row"><span>至少</span><strong id="minimum">142</strong><small id="minimum-unit">场</small></div>
+            <div class="bound-row"><span>至多</span><strong id="maximum">267</strong><small id="maximum-unit">场</small></div>
           </div>
           <div class="result-meta">
-            <p><span>估算总阵亡</span><b id="deaths">279 场</b></p>
-            <p><span>反推总体 KD</span><b id="overall">4.47</b></p>
-            <p><span>绝密阵亡占比区间</span><b id="share">40.2%–70.4%</b></p>
+            <p><span>估算总阵亡</span><b id="deaths">168 场</b></p>
+            <p><span>反推总体 KD</span><b id="overall">5.09</b></p>
+            <p><span>绝密阵亡占比区间</span><b id="share">84.0%–90.4%</b></p>
           </div>
         </div>
         <p id="warning" class="warning" hidden></p>
