@@ -12,7 +12,7 @@
 
 .bound-row {
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(38px, 1fr) auto minmax(38px, 1fr);
   align-items: baseline;
   min-height: 45px;
   padding: 5px 0;
@@ -27,6 +27,8 @@
 }
 
 .result .bound-row > strong {
+  justify-self: center;
+  text-align: center;
   color: var(--accent);
   font: 650 38px/1 PortalKai, serif;
 }
@@ -37,6 +39,7 @@
 }
 
 .bound-row > small {
+  justify-self: end;
   color: var(--muted);
   font-size: 11px;
 }
@@ -47,6 +50,6 @@
 
 @media (max-width: 580px) {
   .bound-row {
-    grid-template-columns: 42px minmax(0, 1fr) auto;
+    grid-template-columns: minmax(42px, 1fr) auto minmax(42px, 1fr);
   }
 }

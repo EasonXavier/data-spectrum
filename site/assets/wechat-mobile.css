@@ -13,15 +13,17 @@ body {
   body {
     width: 100%;
     max-width: 100%;
-    overflow-x: clip;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
   }
 
   body {
     min-width: 0;
+    position: relative;
   }
 
   .ambient {
-    position: fixed;
+    display: none;
   }
 
   .topbar {
@@ -152,7 +154,7 @@ body {
   }
 
   .bound-row {
-    grid-template-columns: 40px minmax(0, 1fr) auto;
+    grid-template-columns: minmax(40px, 1fr) auto minmax(40px, 1fr);
     min-height: 41px;
     padding: 4px 0;
   }
