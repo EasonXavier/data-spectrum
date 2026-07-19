@@ -18,7 +18,7 @@
       <span>DataSpectrum<small>数据棱镜</small></span>
     </a>
     <div class="header-actions">
-      <span class="version">KD 鉴定器 · ALPHA 0.2</span>
+      <span class="version">KD 鉴定器 · ALPHA 0.3</span>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换明暗主题">☀</button>
     </div>
   </header>
@@ -27,7 +27,7 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">DELTA FORCE · PUBLIC STATS LAB</p>
-        <h1>从公开 KD，推算<br><em>绝密对局的最低下界</em></h1>
+        <h1>用数据估算<br><em>绝密对局最低场次</em></h1>
         <p class="lead">只分析一个玩家。输入公开战绩，数据棱镜会计算：为了让三条匹配队列的 KD 与总击杀同时成立，绝密队列至少需要出现多少场。</p>
         <div class="principle"><span>计算原则</span><p>只给出数据能够证明的最低值，不猜测未公开的真实场次分布。</p></div>
       </div>
@@ -37,6 +37,7 @@
           <div><p class="kicker">01 / AVAILABLE</p><h2 id="tool-title">KD 鉴定器</h2></div>
           <span class="ready"><i></i>可用</span>
         </div>
+        <button class="upload-button" type="button" disabled><span aria-hidden="true">＋</span><b>上传战绩截图</b><small>即将支持</small></button>
         <form id="kd-form">
           <div class="input-grid">
             <label>总场次<input id="matches" type="number" min="0" value="486" inputmode="numeric"></label>
@@ -45,22 +46,23 @@
           </div>
           <div class="queue-title"><span>各匹配队列 KD</span><small>KILLS / DEATH</small></div>
           <div class="queue-grid">
-            <label><b>Easy</b><span>普通</span><input id="easy" type="number" min="0" step="0.01" value="2.18" inputmode="decimal"></label>
-            <label><b>Normal</b><span>机密</span><input id="normal" type="number" min="0" step="0.01" value="3.72" inputmode="decimal"></label>
-            <label class="hard"><b>Hard</b><span>绝密</span><input id="hard" type="number" min="0" step="0.01" value="5.46" inputmode="decimal"></label>
+            <label><b>Easy</b><span>普通</span><input id="easy" type="number" min="0.1" step="0.1" value="2.2" inputmode="decimal"></label>
+            <label><b>Normal</b><span>机密</span><input id="normal" type="number" min="0.1" step="0.1" value="3.7" inputmode="decimal"></label>
+            <label class="hard"><b>Hard</b><span>绝密</span><input id="hard" type="number" min="0.1" step="0.1" value="5.5" inputmode="decimal"></label>
           </div>
+          <p class="kd-rule">按游戏显示规则录入：KD 四舍五入到小数点后一位；真实值在 0–0.1 时均显示为 0.1。</p>
         </form>
 
         <div id="result" class="result" aria-live="polite">
-          <div><p>可能的最低绝密场次</p><strong id="minimum">121</strong><span>场</span></div>
+          <div><p>可能的绝密场次区间</p><strong id="minimum">113</strong><span class="range-separator">–</span><strong id="maximum">403</strong><span>场</span></div>
           <div class="result-meta">
             <p><span>估算总阵亡</span><b id="deaths">279 场</b></p>
             <p><span>反推总体 KD</span><b id="overall">4.47</b></p>
-            <p><span>绝密阵亡占比下界</span><b id="share">43.1%</b></p>
+            <p><span>绝密阵亡占比区间</span><b id="share">40.2%–70.4%</b></p>
           </div>
         </div>
         <p id="warning" class="warning" hidden></p>
-        <p class="fine-print">下界不等于真实场次。公开撤离率和 KD 可能经过四舍五入，且一场可能包含不同结算状态；结果适合鉴别“至少打过多少”，不适合作为官方战绩证明。</p>
+        <p class="fine-print">区间不等于真实场次。下界假设绝密没有额外存活场次；上界把允许的绝密阵亡与全部存活场次计入绝密。计算会还原一位小数 KD 的可能区间；撤离率也可能经过四舍五入，结果不应作为官方战绩证明。</p>
       </section>
     </section>
 
