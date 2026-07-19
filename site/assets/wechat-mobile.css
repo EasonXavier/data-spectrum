@@ -10,7 +10,7 @@ body {
 
 .input-grid input,
 .queue-grid input {
-  text-align: center;
+  text-align: left;
   font-variant-numeric: tabular-nums;
 }
 
@@ -114,7 +114,7 @@ body {
   }
 
   .input-grid .stat-survival input {
-    padding-left: 24px;
+    padding-left: 8px;
     padding-right: 24px;
   }
 
@@ -206,6 +206,7 @@ body {
   .result-meta b {
     overflow: hidden;
     font-size: clamp(10px, 3vw, 13px);
+    text-align: left;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
