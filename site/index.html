@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="DataSpectrum 数据棱镜：三角洲行动 KD 鉴定器">
+  <meta name="theme-color" content="#0f0f11">
+  <title>DataSpectrum · 数据棱镜</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="./assets/app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="DataSpectrum 首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>DataSpectrum<small>数据棱镜</small></span>
+    </a>
+    <div class="header-actions">
+      <span class="version">KD 鉴定器 · ALPHA 0.2</span>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换明暗主题">☀</button>
+    </div>
+  </header>
+
+  <main class="page-shell" id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">DELTA FORCE · PUBLIC STATS LAB</p>
+        <h1>从公开 KD，推算<br><em>绝密对局的最低下界</em></h1>
+        <p class="lead">只分析一个玩家。输入公开战绩，数据棱镜会计算：为了让三条匹配队列的 KD 与总击杀同时成立，绝密队列至少需要出现多少场。</p>
+        <div class="principle"><span>计算原则</span><p>只给出数据能够证明的最低值，不猜测未公开的真实场次分布。</p></div>
+      </div>
+
+      <section class="tool-card" aria-labelledby="tool-title">
+        <div class="card-top">
+          <div><p class="kicker">01 / AVAILABLE</p><h2 id="tool-title">KD 鉴定器</h2></div>
+          <span class="ready"><i></i>可用</span>
+        </div>
+        <form id="kd-form">
+          <div class="input-grid">
+            <label>总场次<input id="matches" type="number" min="0" value="486" inputmode="numeric"></label>
+            <label>总击杀数<input id="kills" type="number" min="0" value="1248" inputmode="numeric"></label>
+            <label>总撤离率<input id="survival" type="number" min="0" max="100" step="0.1" value="42.6" inputmode="decimal"><span>%</span></label>
+          </div>
+          <div class="queue-title"><span>各匹配队列 KD</span><small>KILLS / DEATH</small></div>
+          <div class="queue-grid">
+            <label><b>Easy</b><span>普通</span><input id="easy" type="number" min="0" step="0.01" value="2.18" inputmode="decimal"></label>
+            <label><b>Normal</b><span>机密</span><input id="normal" type="number" min="0" step="0.01" value="3.72" inputmode="decimal"></label>
+            <label class="hard"><b>Hard</b><span>绝密</span><input id="hard" type="number" min="0" step="0.01" value="5.46" inputmode="decimal"></label>
+          </div>
+        </form>
+
+        <div id="result" class="result" aria-live="polite">
+          <div><p>可能的最低绝密场次</p><strong id="minimum">121</strong><span>场</span></div>
+          <div class="result-meta">
+            <p><span>估算总阵亡</span><b id="deaths">279 场</b></p>
+            <p><span>反推总体 KD</span><b id="overall">4.47</b></p>
+            <p><span>绝密阵亡占比下界</span><b id="share">43.1%</b></p>
+          </div>
+        </div>
+        <p id="warning" class="warning" hidden></p>
+        <p class="fine-print">下界不等于真实场次。公开撤离率和 KD 可能经过四舍五入，且一场可能包含不同结算状态；结果适合鉴别“至少打过多少”，不适合作为官方战绩证明。</p>
+      </section>
+    </section>
+
+    <section class="roadmap">
+      <div class="section-heading"><div><p class="eyebrow">NEXT MODULE</p><h2>玩家评价系统</h2></div><span>设计占位 · 暂未启用</span></div>
+      <div class="placeholder-grid">
+        <article><b>交战能力</b><div class="ghost-bar"><i style="width:72%"></i></div><p>等待真实样本与权重校准</p></article>
+        <article><b>生存决策</b><div class="ghost-bar"><i style="width:58%"></i></div><p>等待不同队列基准线</p></article>
+        <article><b>综合评价</b><strong>—</strong><p>不输出未经验证的玩家等级</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><span>DATASPECTRUM / 数据棱镜</span><span>只计算可解释的数据下界</span></footer>
+</body>
+</html>
