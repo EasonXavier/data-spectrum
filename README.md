@@ -4,7 +4,7 @@
 
 ## 在线访问
 
-<https://easonxavier.github.io/DataSpectrum/>
+<https://easonx.me/DataSpectrum/>
 
 ## 架构
 
