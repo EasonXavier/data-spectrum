@@ -5,9 +5,10 @@
 .hero h1 {
   max-width: 100%;
   font-size: clamp(32px, 10.5cqw, 52px);
-  text-wrap: balance;
 }
 
+.hero h1 span,
 .hero h1 em {
-  display: inline;
+  display: block;
+  white-space: nowrap;
 }
