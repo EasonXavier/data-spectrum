@@ -2,7 +2,7 @@
 <html lang="zh-CN" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
   <meta name="description" content="DataSpectrum 数据棱镜：三角洲行动 KD 鉴定器">
   <meta name="theme-color" content="#0f0f11">
   <title>DataSpectrum · 数据棱镜</title>
@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./assets/title-fit.css">
   <link rel="stylesheet" href="./assets/result-layout.css">
   <link rel="stylesheet" href="./assets/header-nav.css">
+  <link rel="stylesheet" href="./assets/wechat-mobile.css">
   <script src="./assets/app.js" defer></script>
 </head>
 <body>
@@ -25,7 +26,7 @@
       <a class="brand" href="#top" aria-label="DataSpectrum 首页"><span>DataSpectrum<small>数据棱镜</small></span></a>
     </div>
     <div class="header-actions">
-      <span class="version">KD 鉴定器 · v0.3.1</span>
+      <span class="version">KD 鉴定器 · v0.4.0</span>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换明暗主题">☀</button>
     </div>
   </header>
@@ -35,8 +36,8 @@
       <div class="hero-copy">
         <p class="eyebrow">DELTA FORCE · PUBLIC STATS LAB</p>
         <h1><span>用面板估算</span><em>绝密对局场次</em></h1>
-        <p class="lead">只分析一个玩家。输入公开战绩，数据棱镜会计算：为了让三条匹配队列的 KD 与总击杀同时成立，绝密队列至少需要出现多少场。</p>
-        <div class="principle"><span>计算原则</span><p>只给出数据能够证明的最低值，不猜测未公开的真实场次分布。</p></div>
+        <p class="lead">只分析一个玩家。输入公开战绩，数据棱镜会计算：为了让三条匹配队列的 KD 与总击杀同时成立，绝密队列可能出现的场次区间。</p>
+        <div class="principle"><span>计算原则</span><p>只给出公开数据能够约束的上下界；数据不足时，不猜测无法证明的上界。</p></div>
       </div>
 
       <section class="tool-card" aria-labelledby="tool-title">
@@ -49,7 +50,7 @@
           <div class="input-grid">
             <label>总场次<input id="matches" type="number" min="0" value="284" inputmode="numeric"></label>
             <label>总击杀数<input id="kills" type="number" min="0" value="855" inputmode="numeric"></label>
-            <label>总撤离率<input id="survival" type="number" min="0" max="100" step="0.1" value="40.8" inputmode="decimal"><span>%</span></label>
+            <label class="stat-survival">总撤离率<input id="survival" type="number" min="0" max="100" step="0.1" value="40.8" inputmode="decimal"><span>%</span></label>
           </div>
           <div class="queue-title"><span>各匹配队列 KD</span><small>KILLS / DEATH</small></div>
           <div class="queue-grid">
@@ -86,6 +87,6 @@
       </div>
     </section>
   </main>
-  <footer><span>DATASPECTRUM / 数据棱镜</span><span>只计算可解释的数据下界</span></footer>
+  <footer><span>DATASPECTRUM / 数据棱镜</span><span>只计算可解释的数据区间</span></footer>
 </body>
 </html>
