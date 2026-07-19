@@ -57,6 +57,8 @@ function calculate() {
   document.getElementById("minimum").textContent = error ? "—" : String(minimum);
   document.getElementById("maximum").textContent = error ? "—" : upperConstrained ? String(maximum) : "无法约束";
   document.getElementById("maximum").classList.toggle("unbounded", !error && !upperConstrained);
+  document.getElementById("minimum-unit").hidden = Boolean(error);
+  document.getElementById("maximum-unit").hidden = Boolean(error) || !upperConstrained;
   document.getElementById("deaths").textContent = `${Math.round(deaths)} 场`;
   document.getElementById("overall").textContent = Number.isFinite(overall) ? overall.toFixed(2) : "—";
   document.getElementById("share").textContent = error ? "—" : `${(minimumShare * 100).toFixed(1)}%–${(maximumShare * 100).toFixed(1)}%`;

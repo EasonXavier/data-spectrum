@@ -1,0 +1,52 @@
+.bound-list {
+  display: grid;
+  align-content: center;
+  gap: 9px;
+}
+
+.bound-list > p {
+  margin: 0 0 2px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.bound-row {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  align-items: baseline;
+  min-height: 45px;
+  padding: 5px 0;
+  border-top: 1px solid var(--line);
+}
+
+.bound-row > span {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.result .bound-row > strong {
+  color: var(--accent);
+  font: 650 38px/1 PortalKai, serif;
+}
+
+.result .bound-row > strong.unbounded {
+  color: var(--muted);
+  font: 650 17px/1.2 PortalText, sans-serif;
+}
+
+.bound-row > small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.bound-row > small[hidden] {
+  display: none;
+}
+
+@media (max-width: 580px) {
+  .bound-row {
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+  }
+}

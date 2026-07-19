@@ -8,6 +8,7 @@
   <title>DataSpectrum · 数据棱镜</title>
   <link rel="stylesheet" href="./assets/styles.css">
   <link rel="stylesheet" href="./assets/title-fit.css">
+  <link rel="stylesheet" href="./assets/result-layout.css">
   <script src="./assets/app.js" defer></script>
 </head>
 <body>
@@ -55,7 +56,11 @@
         </form>
 
         <div id="result" class="result" aria-live="polite">
-          <div><p>可能的绝密场次区间</p><strong id="minimum">113</strong><span class="range-separator">–</span><strong id="maximum">403</strong><span>场</span></div>
+          <div class="bound-list">
+            <p>可能的绝密场次区间</p>
+            <div class="bound-row"><span>至少</span><strong id="minimum">113</strong><small id="minimum-unit">场</small></div>
+            <div class="bound-row"><span>至多</span><strong id="maximum">403</strong><small id="maximum-unit">场</small></div>
+          </div>
           <div class="result-meta">
             <p><span>估算总阵亡</span><b id="deaths">279 场</b></p>
             <p><span>反推总体 KD</span><b id="overall">4.47</b></p>
