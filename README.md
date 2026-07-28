@@ -6,7 +6,7 @@
 
 ## 在线访问
 
-<https://easonx.me/DataSpectrum/>
+<https://easonx.me/data-spectrum/>
 
 ## 架构
 
