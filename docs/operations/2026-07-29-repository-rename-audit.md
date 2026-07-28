@@ -3,7 +3,7 @@
 ## Operation
 
 - Operation ID: `repo-rename-2026-07-29-data-spectrum`
-- Status: `prepared`
+- Status: `renamed; deployment verification pending`
 - Repository ID: `1305865066`
 - Default branch: `main`
 - Visibility: `public`
@@ -32,6 +32,15 @@
 3. Update `origin` to the new repository URL.
 4. Append the actual rename time, commits, and verification evidence to this file.
 5. Push the completion record, wait for the Pages workflow, and verify the new URL.
+
+## Execution record
+
+- Preparation commit: `4065be1`
+- Renamed at: `2026-07-29T07:26:09+08:00` (`2026-07-28T23:26:09Z`)
+- Rename API result: `EasonXavier/data-spectrum`
+- Repository ID after rename: `1305865066`
+- Local origin after rename: `https://github.com/EasonXavier/data-spectrum.git`
+- Completion commit: recorded by the commit containing this execution update.
 
 ## Rollback
 
